@@ -1,5 +1,7 @@
-package HW1;
+package HW1.services;
 
+import HW1.model.Product;
+import HW1.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,7 +12,7 @@ import java.util.Scanner;
 
 @Component
 public class Cart implements CommandLineRunner {
-    private final ProductRepository productRepository;
+    private ProductRepository productRepository;
     private List<Product> cart;
     private int id;
     private String str;
@@ -20,6 +22,7 @@ public class Cart implements CommandLineRunner {
         this.productRepository = productRepository;
         cart = new ArrayList<>();
     }
+
 
     @Override
     public void run(String... args) throws Exception {
