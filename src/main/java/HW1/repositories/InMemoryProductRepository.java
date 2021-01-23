@@ -1,5 +1,6 @@
-package HW1;
+package HW1.repositories;
 
+import HW1.model.Product;
 import org.springframework.stereotype.Repository;
 import java.util.*;
 
@@ -27,4 +28,8 @@ public class InMemoryProductRepository implements ProductRepository {
         return products.get(id);
     }
 
+    @Override
+    public void add(Product product) {
+        products.put(products.size(), product);
+    }
 }
